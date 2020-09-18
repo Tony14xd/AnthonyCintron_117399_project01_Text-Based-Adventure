@@ -15,15 +15,15 @@ must = ("\nUse Only A, B, or C\n")
 #message3.draw(win)
 
 def option_ask():
-    message6 = Text(Point(350,210),"The two men look at one another. They begin laughing and this confuses you"
-    "They ask you for how long have you been in the Knight Order. You kindly reply with the truth"
-    "Just 2 days. The man on the left says: Rookie Numbers. No wonder he has no idea, and"
-    "thinks everything is all ice cream and gumdrops. The man of the right coughs with a slight"
-    "grin on his face. He says to you: Let me tell you something kid. These streets, this place"
-    "your swooorn to protect. Its absolute crap. Theres no justice. You may save someone right now"
-    "and they will be greatful sure. But the moment you aint lookin, they surely will be around the corner"
-    "stealin from another helpless citizen. And guess what, your knight friends arent"
-    "helpin. They get paid by criminals to keep their mouth shut. Look the other way, catch my drift?"
+    message6 = Text(Point(350,460),"The two men look at one another. They begin laughing and this confuses you\n"
+    "They ask you for how long have you been in the Knight Order. You kindly reply with the truth\n"
+    "Just 2 days. The man on the left says: Rookie Numbers. No wonder he has no idea, and\n"
+    "thinks everything is all ice cream and gumdrops. The man of the right coughs with a slight\n"
+    "grin on his face. He says to you: Let me tell you something kid. These streets, this place\n"
+    "your swooorn to protect. Its absolute crap. Theres no justice. You may save someone right now\n"
+    "and they will be greatful sure. But the moment you aint lookin, they surely will be around the corner\n"
+    "stealin from another helpless citizen. And guess what, your knight friends arent\n"
+    "helpin. They get paid by criminals to keep their mouth shut. Look the other way, catch my drift?\n"
     "Now how about you do the same and look some place else.\n After hearing this you: ")
     message6.draw(win)
     time.sleep(1)
@@ -31,11 +31,11 @@ def option_ask():
     "and contemplate life.\n C. Call the other knights and arrest these two men for speaking\n"
     "ill willed of the Knightly code.")
     if choice in AnswerA:
-        message4 = Text(Point(350,320),"\nWell, your a pretty pathetic Knight...Go home and quit.")
+        message4 = Text(Point(350,600),"\nWell, your a pretty pathetic Knight...Go home and quit.")
         message4.draw(win)
         win.getMouse()
     elif choice in AnswerB:
-        message5 = Text(Point(350,320),"\nThe two men laugh. The man of the right says: Seems you got good"
+        message5 = Text(Point(350,600),"\nThe two men laugh. The man of the right says: Seems you got good"
         "decision makin' skills kid. Come on, drink our worries away!\n\nYou lost!")
         message5.draw(win)
         win.getMouse()
@@ -67,17 +67,17 @@ def intro():
     message1.draw(win)
     time.sleep(1)
     playername = userinput("Enter Your Name: ")
-    message2 = Text(Point(350,180),f"What a powerful name that is! We are proud to have you, {playername},\n Now" 
-    "now go out there and show the world what your capable of!\n")
+    message2 = Text(Point(350,160),f"What a powerful name that is! We are proud to have you, {playername},\n Now" 
+    " go out there and show the world what your capable of!\n")
     message2.draw(win)
-    message7 = Text(Point(350,200),"After your introduction to this world, you enter a bar to monitor"
+    message7 = Text(Point(350,200),"After your introduction to this world, you enter a bar to monitor\n"
     "the environment")
     message7.draw(win)
-    message8 = Text(Point(350,220),"You see two men having a discussion. You approach the bartender and buy"
-    "a drink to not seem suspiscious. From your current distance you can overhear their"
-    "conversation. To your surprise, they are belittling the Knight Order"
-    "and the Kingdom who you have sworn to protect. This frustrates you thus, "
-    "you approach their table. You are looking at them from above while they are sitting"
+    message8 = Text(Point(350,290),"You see two men having a discussion. You approach the bartender and buy\n"
+    "a drink to not seem suspiscious. From your current distance you can overhear their\n"
+    "conversation. To your surprise, they are belittling the Knight Order\n"
+    "and the Kingdom who you have sworn to protect. This frustrates you thus, \n"
+    "you approach their table. You are looking at them from above while they are sitting\n"
     "down enjoying their hard earned alcohol. Do you: ")
     message8.draw(win)
     time.sleep(1)
