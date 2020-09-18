@@ -2,6 +2,7 @@ import time
 from graphics import*
 win = GraphWin('Text_Based_Adventure', 700,800)
 win2 = GraphWin('Second Window of Adventure', 600,600)
+win3 = GraphWin('Once out of Space on Story', 700,700)
 time.sleep(1)
 AnswerA = ["A", "a"]
 AnswerB = ["B", "b"]
@@ -35,7 +36,7 @@ def option_ask():
         message4.draw(win)
         win.getMouse()
     elif choice in AnswerB:
-        message5 = Text(Point(350,600),"\nThe two men laugh. The man of the right says: Seems you got good"
+        message5 = Text(Point(350,600),"\nThe two men laugh. The man of the right says: Seems you got good\n"
         "decision makin' skills kid. Come on, drink our worries away!\n\nYou lost!")
         message5.draw(win)
         win.getMouse()
@@ -47,6 +48,17 @@ def option_ask():
 
 
 def userinput(message):
+    message1 = Text(Point(300,100), message)
+    message1.draw(win2)
+    inputBox = Entry(Point(300,150), 15)
+    inputBox.draw(win2)
+    win2.getMouse()
+    choice = inputBox.getText()
+    inputBox.undraw()
+    message1.undraw()
+    return choice
+
+def userinput2(message):
     message1 = Text(Point(300,100), message)
     message1.draw(win2)
     inputBox = Entry(Point(300,150), 15)
@@ -100,6 +112,7 @@ def intro():
 
 
 def option_evil():
+    message8 = Text(Point)
     print("Whats the meaning of this?! Scream the men as they are being taken away from"
     "the bar and headed to the dungeon. As they are being taken away, you reflect on"
     "what the man said, which you believe certainly cannot be true. You follow the knights"
