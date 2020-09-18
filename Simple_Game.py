@@ -26,14 +26,18 @@ def option_ask():
     "helpin. They get paid by criminals to keep their mouth shut. Look the other way, catch my drift?"
     "Now how about you do the same and look some place else.\n After hearing this you: ")
     time.sleep(1)
-    choice = userinput("A. Walk away with helpless after what you heard. B. Grab a drink and sit down with them"
-    "and contemplate life. C. Call the other knights and arrest these two men for speaking"
+    choice = userinput("A. Walk away with helpless after what you heard.\n B. Grab a drink and sit down with them"
+    "and contemplate life.\n C. Call the other knights and arrest these two men for speaking\n"
     "ill willed of the Knightly code.")
     if choice in AnswerA:
-        message4 = Text(Point(350,320),"\nWell, your a pretty pathetic Knight...Go home and quit.")
+        message4 = Text(Point(350,210),"\nWell, your a pretty pathetic Knight...Go home and quit.")
+        message4.draw(win)
+        win.getMouse()
     elif choice in AnswerB:
         message5 = Text(Point(350,320),"\nThe two men laugh. The man of the right says: Seems you got good"
         "decision makin' skills kid. Come on, drink our worries away!\n\nYou lost!")
+        message5.draw(win)
+        win.getMouse()
     elif choice in AnswerC:
         option_evil()
     else:
@@ -44,7 +48,7 @@ def option_ask():
 def userinput(message):
     message1 = Text(Point(300,100), message)
     message1.draw(win2)
-    inputBox = Entry(Point(300,139), 15)
+    inputBox = Entry(Point(300,145), 15)
     inputBox.draw(win2)
     win2.getMouse()
     choice = inputBox.getText()
