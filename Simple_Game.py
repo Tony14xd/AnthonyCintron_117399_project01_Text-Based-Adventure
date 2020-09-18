@@ -43,9 +43,9 @@ def option_ask():
 
 
 def userinput(message):
-    message1 = Text(Point(350,100), message)
+    message1 = Text(Point(300,100), message)
     message1.draw(win2)
-    inputBox = Entry(Point(350,139), 15)
+    inputBox = Entry(Point(300,139), 15)
     inputBox.draw(win2)
     win2.getMouse()
     choice = inputBox.getText()
