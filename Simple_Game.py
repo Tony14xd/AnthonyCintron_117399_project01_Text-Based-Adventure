@@ -9,11 +9,11 @@ AnswerC = ["C","c"]
 yes = ["yes","Yes"]
 no = ["No", "no"]
 death = Text(Point(3,4), "You Died")
-sword = 0
 must = ("\nUse Only A, B, or C\n")
 #message3 = Text(Point(350,200),"After your introduction to this world, you enter a bar to monitor"
     #"the environment")
 #message3.draw(win)
+
 def option_ask():
     print("The two men look at one another. They begin laughing and this confuses you"
     "They ask you for how long have you been in the Knight Order. You kindly reply with the truth"
@@ -26,14 +26,13 @@ def option_ask():
     "helpin. They get paid by criminals to keep their mouth shut. Look the other way, catch my drift?"
     "Now how about you do the same and look some place else.\n After hearing this you: ")
     time.sleep(1)
-    print("A. Walk away with helpless after what you heard. B. Grab a drink and sit down with them"
+    choice = userinput("A. Walk away with helpless after what you heard. B. Grab a drink and sit down with them"
     "and contemplate life. C. Call the other knights and arrest these two men for speaking"
     "ill willed of the Knightly code.")
-    choice = input(">>> ") 
     if choice in AnswerA:
-        print("\nWell, your a pretty pathetic Knight...Go home and quit.")
+        message4 = Text(Point(350,320),"\nWell, your a pretty pathetic Knight...Go home and quit.")
     elif choice in AnswerB:
-        print ("\nThe two men laugh. The man of the right says: Seems you got good"
+        message5 = Text(Point(350,320),"\nThe two men laugh. The man of the right says: Seems you got good"
         "decision makin' skills kid. Come on, drink our worries away!\n\nYou lost!")
     elif choice in AnswerC:
         option_evil()
