@@ -1,7 +1,7 @@
 import time 
 from graphics import*
-win = GraphWin('Text_Based_Adventure', 700,800)
-win2 = GraphWin('Second Window of Adventure', 600,600)
+win = GraphWin('Text_Based_Adventure', 690,800)
+win2 = GraphWin('Second Window of Adventure', 580,300)
 win3 = GraphWin('Once out of Space on Story', 750,700)
 time.sleep(1)
 AnswerA = ["A", "a"]
@@ -29,7 +29,7 @@ def option_ask():
     message6.draw(win)
     time.sleep(1)
     choice = userinput("A. Walk away with helpless after what you heard.\n B. Grab a drink and sit down with them"
-    "and contemplate life.\n C. Call the other knights and arrest these two men for speaking\n"
+    " and contemplate life.\n C. Call the other knights and arrest these two men for speaking\n"
     "ill willed of the Knightly code.")
     if choice in AnswerA:
         message4 = Text(Point(350,600),"\nWell, your a pretty pathetic Knight...Go home and quit.")
@@ -133,28 +133,31 @@ def option_evil():
     choice = userinput2("A. Speak with the man B. Rush towards him C. Stay still due to\n"
     " mothers passing and hate the Knight Order")
     if choice in AnswerA:
-        message10 = Text(Point(360,250),"\nYou....You're him!! You should've been arrested! If you were, this\n"
+        message10 = Text(Point(360,300),"\nYou....You're him!! You should've been arrested! If you were, this\n"
         "would never have happened! The man is starts confused but puts the situtation together\n"
         "Your the kid huh? What did I tell you? This place has no justice. Its a cycle kid.\n"
         "Kinda sucks the fact that it had to be your place I was trying to steal, but I did warn you.\n"
         "How about you let me go huh? Its not like im going to prison anyway. The mans words were filled with\n"
         "the truth. You knew that it wouldnt change anything if you turned him in again. By the time you made\n"
-        "up a decision he escape.\n\nYou lost her..")
+        "up a decision he escaped.\n\nYou lost her..You lose")
         message10.draw(win3)
+        win.getMouse()
+        win.close()
     elif choice in AnswerB:
         if sword > 0:
-            message11 = Text(Point(360,250),"\nThere was fire in your eyes. You scream as you sprint towards him.\n Not a moment wasted as you" 
+            message11 = Text(Point(360,310),"\nThere was fire in your eyes. You scream as you sprint towards him.\n Not a moment wasted as you" 
             "lunge your sword through his chest. Sadly, the neighbors heard the ruckus and you're taken away. Penalty"
             "is death.\n\nYou lose.")
             message11.draw(win3)
         else: #If the user didn't grab the sword
-            message12 = Text(Point(360,250),"\nYou should have taken out your sword. You're "
+            message12 = Text(Point(360,310),"\nYou should have taken out your sword. You're "
             "defenseless. \n\nYou died!")
             message12.draw(win3)
             
     elif choice in AnswerC:
-        print ("I hate this.I hate all of this. The man recognizes your voice. He feels sorry for your"
+        message13 = Text(Point(360, 310),"God...I hate this.I hate all of this. The man recognizes your voice. He feels sorry for\n your"
         "weak mind. He takes this opportunity to escape.")
+        message13.draw(win3)
         option_demise()
     else:
         print (must)
@@ -162,23 +165,23 @@ def option_evil():
 
 
 def option_demise():
-    print ("\nYour story has taken a dark turn. (Quit the program if you cant handle hardcore"
-    "violence). Your mother whom is all you hold dear has perished thus you have lost the"
-    "will to live. You will:")
+    message14 = Text(Point(360,360),"\nYour story has taken a dark turn. (Quit the program if you cant handle hardcore\n"
+    "violence). Your mother whom is all you hold dear has perished thus you have lost the\n"
+    "will to live. You will:" )
+    message14.draw(win3)
     time.sleep(1)
-    print ("""  A.Stop living
-    B. Revenge on the Knight Order
-    C. Leave the Kingdom""")
-    choice = input(">>> ")
+    choice = userinput2("A.Stop living B. Revenge on the Knight Order C. Leave the Kingdom")
     if choice in AnswerA:
-        print ("Not much to say. "
-        "\n\nYou died!")
+        message15 = Text(Point(360,390),"You know what happened...\n\n Game Over" )
+        message15.draw(win3)
     elif choice in AnswerB:
-        print ("\nYou become a wanted killer. You are able to bring into justice the corrupted "
-        "Knights by greeting them with death himself. You are later killed by cancer\n\nYou died.")
+        message16 = Text(Point(360,390),"\nYou become a wanted killer. You are able to bring into justice the corrupted "
+        "Knights by greeting them with death himself. You are later killed by cancer\n\nYou died." )
+        message16.draw(win3)
     elif choice in AnswerC:
-        print("You have no way to survive the outside. You are hungry. You eat an venomous apple and slowly die."
+        message17 = Text(Point(360,390),"You have no way to survive the outside. You are hungry. You eat an venomous apple and slowly die."
         "\n\nYTerrible way to do")
+        message17.draw(win3)
     else:
         print (must)
 
