@@ -2,7 +2,7 @@ import time
 from graphics import*
 win = GraphWin('Text_Based_Adventure', 700,800)
 win2 = GraphWin('Second Window of Adventure', 600,600)
-win3 = GraphWin('Once out of Space on Story', 700,700)
+win3 = GraphWin('Once out of Space on Story', 750,700)
 time.sleep(1)
 AnswerA = ["A", "a"]
 AnswerB = ["B", "b"]
@@ -112,43 +112,45 @@ def intro():
 
 
 def option_evil():
-    message8 = Text(Point)
-    print("Whats the meaning of this?! Scream the men as they are being taken away from"
-    "the bar and headed to the dungeon. As they are being taken away, you reflect on"
-    "what the man said, which you believe certainly cannot be true. You follow the knights"
-    "taking the prisoners to the dungeon, but just as you were warned, they bribed the two knights to let them"
-    "go. This frustrates you but you do nothing. You decide to patrol the town for the rest of the day." 
-    "You reach your house and you look for your mother. You shout and shout but can't find her. You"
-    "walk toward her door and find that there is a shade of red creeping under the door...It's blood."
-    "You smash open the door and find her dead. You see a figure across her body about to leap through the window."
+    message8 = Text(Point(360,90), "Whats the meaning of this?! Scream the men as they are being taken away from\n"
+    "the bar and headed to the dungeon. As they are being taken away, you reflect on\n"
+    "what the man said, which you believe certainly cannot be true. You follow the knights\n"
+    "taking the prisoners to the dungeon, but just as you were warned, they bribed the two knights to let them\n"
+    "go. This frustrates you but you do nothing. You decide to patrol the town for the rest of the day.\n" 
+    "You reach your house and you look for your mother. You shout and shout but can't find her. You\n"
+    "walk toward her door and find that there is a shade of red creeping under the door...It's blood.\n"
+    "You smash open the door and find her dead. You see a figure across her body about to leap through the window.\n"
     "It's the man from the bar. Do you pull out your sword? Y/N")
-    choice = input(">>> ")
+    message8.draw(win3)
+    choice = userinput2("Do you draw your sword?")
     if choice in yes:
         sword = 1 #adds a sword
     else:
         sword = 0
-    print ("\nWhat do you do next?")
+    message9 = Text(Point(360,200),"What is your next move?")
+    message9.draw(win3)
     time.sleep(1)
-    print ("""  A. Speak with the man
-    B. Rush towards him
-    C. Stay still due to mothers passing and hate the Knight Order""")
-    choice = input(">>> ")
+    choice = userinput2("A. Speak with the man B. Rush towards him C. Stay still due to\n"
+    " mothers passing and hate the Knight Order")
     if choice in AnswerA:
-        print ("\nYou....You're him!! You should've been arrested! If you were, this"
-        "would never have happened! The man is starts confused but puts the situtation together"
-        "Your the kid huh? What did I tell you? This place has no justice. Its a cycle kid."
-        "Kinda sucks the fact that it had to be your place I was trying to steal, but I did warn you."
-        "How about you let me go huh? Its not like im going to prison anyway. The mans words were filled with"
-        "the truth. You knew that it wouldnt change anything if you turned him in again. By the time you made"
+        message10 = Text(Point(360,250),"\nYou....You're him!! You should've been arrested! If you were, this\n"
+        "would never have happened! The man is starts confused but puts the situtation together\n"
+        "Your the kid huh? What did I tell you? This place has no justice. Its a cycle kid.\n"
+        "Kinda sucks the fact that it had to be your place I was trying to steal, but I did warn you.\n"
+        "How about you let me go huh? Its not like im going to prison anyway. The mans words were filled with\n"
+        "the truth. You knew that it wouldnt change anything if you turned him in again. By the time you made\n"
         "up a decision he escape.\n\nYou lost her..")
+        message10.draw(win3)
     elif choice in AnswerB:
         if sword > 0:
-            print ("\nThere was fire in your eyes. You scream as you sprint towards him. Not a moment wasted as you" 
+            message11 = Text(Point(360,250),"\nThere was fire in your eyes. You scream as you sprint towards him.\n Not a moment wasted as you" 
             "lunge your sword through his chest. Sadly, the neighbors heard the ruckus and you're taken away. Penalty"
             "is death.\n\nYou lose.")
+            message11.draw(win3)
         else: #If the user didn't grab the sword
-            print ("\nYou should have taken out your sword. You're "
+            message12 = Text(Point(360,250),"\nYou should have taken out your sword. You're "
             "defenseless. \n\nYou died!")
+            message12.draw(win3)
             
     elif choice in AnswerC:
         print ("I hate this.I hate all of this. The man recognizes your voice. He feels sorry for your"
