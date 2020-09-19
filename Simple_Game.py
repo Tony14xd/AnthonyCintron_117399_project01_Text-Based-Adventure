@@ -9,35 +9,32 @@ AnswerB = ["B", "b"]
 AnswerC = ["C","c"]
 yes = ["yes","Yes"]
 no = ["No", "no"]
-death = Text(Point(3,4), "You Died")
 must = ("\nUse Only A, B, or C\n")
-#message3 = Text(Point(350,200),"After your introduction to this world, you enter a bar to monitor"
-    #"the environment")
-#message3.draw(win)
+
 
 def option_ask():
     message6 = Text(Point(350,460),"The two men look at one another. They begin laughing and this confuses you\n"
     "They ask you for how long have you been in the Knight Order. You kindly reply with the truth\n"
     "Just 2 days. The man on the left says: Rookie Numbers. No wonder he has no idea, and\n"
     "thinks everything is all ice cream and gumdrops. The man of the right coughs with a slight\n"
-    "grin on his face. He says to you: Let me tell you something kid. These streets, this place\n"
-    "your swooorn to protect. Its absolute crap. Theres no justice. You may save someone right now\n"
-    "and they will be greatful sure. But the moment you aint lookin, they surely will be around the corner\n"
-    "stealin from another helpless citizen. And guess what, your knight friends arent\n"
-    "helpin. They get paid by criminals to keep their mouth shut. Look the other way, catch my drift?\n"
-    "Now how about you do the same and look some place else.\n After hearing this you: ")
+    "grin on his face. He says to you: Let me tell you somethin' kid. These streets, this place\n"
+    "your swooorn to protect. It's absolute crap. There ain't no justice. You may save someone right now,\n"
+    "and they will be greatful; sure. But the moment you aint lookin', they surely will be around the corner\n"
+    "stealin' from another helpless citizen. And guess what, your knight friends aren't\n"
+    "helpin'. They get paid by criminals to keep their mouth shut. Look the other way, catch my drift?\n"
+    "Now, how about you do the same and look some place else.\n After hearing this you: ")
     message6.draw(win)
     time.sleep(1)
     choice = userinput("A. Walk away with helpless after what you heard.\n B. Grab a drink and sit down with them"
     " and contemplate life.\n C. Call the other knights and arrest these two men for speaking\n"
-    "ill willed of the Knightly code.")
+    "ill-willed of the Knightly Code.")
     if choice in AnswerA:
         message4 = Text(Point(350,600),"\nWell, your a pretty pathetic Knight...Go home and quit.")
         message4.draw(win)
         win.getMouse()
     elif choice in AnswerB:
-        message5 = Text(Point(350,600),"\nThe two men laugh. The man of the right says: Seems you got good\n"
-        "decision makin' skills kid. Come on, drink our worries away!\n\nYou lost!")
+        message5 = Text(Point(350,600),"\nThe two men laugh. The man of the right says: Seems you got a good\n"
+        "sense of judgement kid. Come on, drink our worries away!\n\nYou lost!")
         message5.draw(win)
         win.getMouse()
     elif choice in AnswerC:
@@ -99,9 +96,13 @@ def intro():
     if choice in AnswerA:
         option_ask()
     elif choice in AnswerB:
-        print("Angry one")
+        message16 = Text(Point(350,400), "You break your arm from the force exerted upon the table. Everyone\n"
+        "laughs at you as you walk out the front door. You retire from being an honorable Knight\n\n"
+        "You Lose")
+        message16.draw(win)
+        win.getMouse()
     elif choice in AnswerC:
-        message3 = Text(Point(350,300),"What am I? The man on the left replies saying: A Knight?. \nYou"
+        message3 = Text(Point(350,400),"What am I? The man on the left replies saying: A Knight?. \nYou"
         "have the biggest smirk on your face behind your helmet and say: You're Goddamn Right.\n"
         "\n\nPretty quick ending but hey, you left the scene pretty cool.\n")
         message3.draw(win)
@@ -112,7 +113,7 @@ def intro():
 
 
 def option_evil():
-    message8 = Text(Point(360,90), "Whats the meaning of this?! Scream the men as they are being taken away from\n"
+    message8 = Text(Point(360,90), "Whats the meanin' of this?! Scream the men as they are being taken away from\n"
     "the bar and headed to the dungeon. As they are being taken away, you reflect on\n"
     "what the man said, which you believe certainly cannot be true. You follow the knights\n"
     "taking the prisoners to the dungeon, but just as you were warned, they bribed the two knights to let them\n"
@@ -124,7 +125,7 @@ def option_evil():
     message8.draw(win3)
     choice = userinput2("Do you draw your sword?")
     if choice in yes:
-        sword = 1 #adds a sword
+        sword = 1 
     else:
         sword = 0
     message9 = Text(Point(360,200),"What is your next move?")
@@ -149,7 +150,7 @@ def option_evil():
             "lunge your sword through his chest. Sadly, the neighbors heard the ruckus and you're taken away. Penalty"
             "is death.\n\nYou lose.")
             message11.draw(win3)
-        else: #If the user didn't grab the sword
+        else: 
             message12 = Text(Point(360,310),"\nYou should have taken out your sword. You're "
             "defenseless. \n\nYou died!")
             message12.draw(win3)
@@ -172,14 +173,14 @@ def option_demise():
     time.sleep(1)
     choice = userinput2("A.Stop living B. Revenge on the Knight Order C. Leave the Kingdom")
     if choice in AnswerA:
-        message15 = Text(Point(360,390),"You know what happened...\n\n Game Over" )
+        message15 = Text(Point(360,420),"You know what happened...\n\n Game Over" )
         message15.draw(win3)
     elif choice in AnswerB:
-        message16 = Text(Point(360,390),"\nYou become a wanted killer. You are able to bring into justice the corrupted "
+        message16 = Text(Point(360,420),"\nYou become a wanted killer. You are able to bring into justice the corrupted "
         "Knights by greeting them with death himself. You are later killed by cancer\n\nYou died." )
         message16.draw(win3)
     elif choice in AnswerC:
-        message17 = Text(Point(360,390),"You have no way to survive the outside. You are hungry. You eat an venomous apple and slowly die."
+        message17 = Text(Point(360,420),"You have no way to survive the outside. You are hungry. You eat an venomous apple and slowly die."
         "\n\nYTerrible way to do")
         message17.draw(win3)
     else:
