@@ -1,11 +1,13 @@
 from graphics import *
-def option_demise():
+from User_Input import *
+from User_choices import *
+def option_demise(win,win2,win3):
     message14 = Text(Point(360,360),"\nYour story has taken a dark turn. (Quit the program if you cant handle hardcore\n"
     "violence). Your mother whom is all you hold dear has perished thus you have lost the\n"
     "will to live. You will:" )
     message14.draw(win3)
     time.sleep(1)
-    choice = userinput2("A.Stop living B. Revenge on the Knight Order C. Leave the Kingdom")
+    choice = userinput("A.Stop living B. Revenge on the Knight Order C. Leave the Kingdom",win2)
     if choice in AnswerA:
         message15 = Text(Point(360,420),"You know what happened...\n\n Game Over" )
         message15.draw(win3)
