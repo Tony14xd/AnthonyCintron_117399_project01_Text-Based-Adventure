@@ -59,4 +59,4 @@ def option_evil(win,win2,win3):
         message13.draw(win3)
         option_demise(win,win2,win3)
     else:
-        print (must)
+        print(must)
