@@ -5,57 +5,15 @@ from User_choices import *
 from Classes import *
 from Hero_Selector import *
 
-def select_hero(win,win2,win4):
-    selector = userinput("Select your hero: 1. Human \n2. Dragoon \n3. Elf \n",win2)
-    if selector == "1":
-        hero = Human()
-        message20 = Text(Point(220,80),"You have chosen to be a Human. \nA human's statistics are the following: ")
-        message20.draw(win4)
-        message21 = Text(Point(220,130),f"Health -> {hero.health}") 
-        message21.draw(win4)
-        message22 = Text(Point(220,150),f"Strength -> {hero.strength}")
-        message22.draw(win4)
-        message23 = Text(Point(220,170),f"Defense ->  {hero.defense}")
-        message23.draw(win4)
-        message24 = Text(Point(220,190),f"Magic ->  {hero.magic}")
-        message24.draw(win4)
- 
-    elif selector == "2":
-        hero = Dragoon()
-        message20 = Text(Point(220,100),"You have chosen to be a Dragoon. A Dragoon's statistics are the following: ")
-        message20.draw(win4)
-        message21 = Text(Point(220,130),f"Health -> {hero.health}") 
-        message21.draw(win4)
-        message22 = Text(Point(220,150),f"Strength -> {hero.strength}")
-        message22.draw(win4)
-        message23 = Text(Point(220,170),f"Defense ->  {hero.defense}")
-        message23.draw(win4)
-        message24 = Text(Point(220,190),f"Magic ->  {hero.magic}")
-    elif selector == "3":
-        hero = Elf()
-        message20 = Text(Point(220,100),"You have chosen to be an Elf. A human's statistics are the following: ")
-        message20.draw(win4)
-        message21 = Text(Point(220,130),f"Health -> {hero.health}") 
-        message21.draw(win4)
-        message22 = Text(Point(220,150),f"Strength -> {hero.strength}")
-        message22.draw(win4)
-        message23 = Text(Point(220,170),f"Defense ->  {hero.defense}")
-        message23.draw(win4)
-        message24 = Text(Point(220,190),f"Magic ->  {hero.magic}")
-    else:
-        print("Only press 1,2,3") 
-        select_hero()
-    return hero
-
-
 
 def enemy_selection(orc, goblin, vampire):
     enemylist = [orc(), goblin(), vampire()]
     chance = random.randint(0,2)
     enemy = enemylist[chance]
     return enemy
+   
 
-def battle(win,win2,win4,hero = Human()):
+def battle(win,win2,win4,win5,hero):
     enemy = enemy_selection(Orc,Goblin,Vampire)
     message31 = Text(Point(350,230),"You leave the kingdom and after a long journey you reach Mount Shriek.")
     message31.draw(win)
@@ -67,17 +25,17 @@ def battle(win,win2,win4,hero = Human()):
     while enemy.health > 0:
         choice = userinput("You have 3 options:\n1. Sword \n2. Magic \n3. Run",win2)
         if choice == "1":
-            message33 = Text(Point(350,360),f"(unsheathes sword)..Die {enemy.getname()}! Scum, I shall not let you plague our kingdom any further.")
-            message33.draw(win)
+            message33 = Text(Point(260,60),f"(unsheathes sword)..Die {enemy.getname()}!\n Scum, I shall not let you plague our kingdom any further.")
+            message33.draw(win5)
             hitchance = random.randint(0,10)
             if hitchance > 3:
                 enemy.health = enemy.health - hero.strength
-                message34 = Text(Point(350,380),f"You hurt the {enemy.getname()}, Their health is {enemy.health}")
-                message34.draw(win)
+                message34 = Text(Point(260,80),f"You hurt the {enemy.getname()}, Their health is {enemy.health}")
+                message34.draw(win5)
                 if enemy.health > 0:
                     hero.health = hero.health - (enemy.strength / hero.defense)
-                    message35 = Text(Point(350,400),f"The {enemy.getname()}, attack you. You have {hero.health},health remaining.")
-                    message35.draw(win)
+                    message35 = Text(Point(260,100),f"The {enemy.getname()}, attack you. You have {hero.health},health remaining.")
+                    message35.draw(win5)
                 else:
                     if enemy.getname() == "goblin":
                         enemy.health = 30
@@ -85,15 +43,20 @@ def battle(win,win2,win4,hero = Human()):
                         enemy.health = 50
                     elif enemy.getname() == "vampire":
                         enemy.health = 60
-                    message36 = Text(Point(350,420),f"You have defeated the {enemy.getname()}")
-                    message36.draw(win)
+                    message36 = Text(Point(260,120),f"You have defeated the {enemy.getname()}")
+                    message36.draw(win5)
+                    win2.getMouse()
+                    win5.close()
                     break
             else:
-                message37 = Text(Point(350,440),f"You get an urge to sneeze, the enemy {enemy.getname()} takes this chance to attack you.")  
-                message37.draw(win)  
+                message37 = Text(Point(260,440),f"You get an urge to sneeze, the enemy {enemy.getname()} takes this chance to attack you.")  
+                message37.draw(win5)  
                 hero.health = hero.health - enemy.strength
-                message38 = Text(Point(350,460),f"Because of this, you have {hero.health} health remaining.")
-                message38.draw
+                message38 = Text(Point(260,460),f"Because of this, you have {hero.health} health remaining.")
+                message38.draw(win5)
+                win2.getMouse()
+                win5.close()
+
 
 
         elif choice == "2":
