@@ -15,7 +15,7 @@ def enemy_selection(orc, goblin,vampire):
 
 
 def main():
-    intro(GraphWin('Text_Based_Adventure', 690,800), GraphWin('Second Window of Adventure', 580,300), GraphWin('Hero', 400,300))
+    intro(GraphWin('Text_Based_Adventure', 690,800), GraphWin('Second Window of Adventure', 580,300), GraphWin('Hero', 400,300), GraphWin('BattleBox',300,300))
     
 
 main()
