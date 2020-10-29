@@ -66,7 +66,7 @@ def battle(win,win2,win4,win5,win6,hero):
             hitchance = random.randint(0,10)
             if hitchance > 3:
                 enemy.health = enemy.health - hero.strength
-                message40 = Text(Point(210,120),f"You hurt the {enemy.getname()} Their health is {enemy.health}")
+                message40 = Text(Point(210,200),f"You hurt the {enemy.getname()} Their health is {enemy.health}")
                 message40.draw(win5)
                 if enemy.health > 0:
                     hero.health = hero.health - (enemy.strength / hero.defense)
@@ -81,6 +81,12 @@ def battle(win,win2,win4,win5,win6,hero):
                         enemy.health = 60
                     message42 = Text(Point(210,200),f"You have defeated the {enemy.getname()}")
                     message42.draw(win6)
+                    message80 = Text(Point(210,200),"Click to continue: ")
+                    message80.draw(win2)
+                    win2.getMouse()
+                    message80.undraw()
+                    win5.close()
+                    win6.close()
                     break
             else:
                 message43 = Text(Point(210,140),f"For some reason you forgot how to cast your spell,\n the enemy {enemy.getname()} takes this chance to attack you.") 
