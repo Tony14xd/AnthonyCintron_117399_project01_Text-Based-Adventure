@@ -5,7 +5,7 @@ from First_ask import *
 from Hero_Selector import *
 from Battle_mode import *
 
-#The Text when being introduced to the game with its respective positioning in graphics
+#The Text when being introduced to the game with its respective positioning in graphic
 
 def intro(win,win2,win4,win5,win6):
     message1 = Text(Point(350,70),"Welcome Proud Knight, you have been chosen from a small gifted group of\n"
