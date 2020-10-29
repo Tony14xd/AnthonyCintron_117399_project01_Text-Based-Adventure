@@ -1,8 +1,13 @@
 from graphics import*
 from User_Input import *
 from User_choices import *
-from First_ask import*
-def intro(win,win2):
+from First_ask import *
+from Hero_Selector import *
+from Battle_mode import *
+
+#The Text when being introduced to the game with its respective positioning in graphics
+
+def intro(win,win2,win4,win5,win6):
     message1 = Text(Point(350,70),"Welcome Proud Knight, you have been chosen from a small gifted group of\n"
      " people to join our ranks. You have sworn an oath to protect the Kingdom\n"
      " of RossWell and its people from the maliciousness that dwells\n"
@@ -11,14 +16,25 @@ def intro(win,win2):
      " please tell us your name to begin your journey..!\n")
     message1.draw(win)
     time.sleep(1)
+
+    hero = select_hero(win,win2,win4,win5,win6)
+    #select_hero(win,win2,win4)
+   
+    
     playername = userinput("Enter Your Name: ", win2)
     message2 = Text(Point(350,160),f"What a powerful name that is! We are proud to have you, {playername},\n Now" 
     " go out there and show the world what your capable of!\n")
     message2.draw(win)
-    message7 = Text(Point(350,200),"After your introduction to this world, you enter a bar to monitor\n"
+    message25 = Text(Point(350,200),"""Your first Task is to head toward Mount Shriek and slay any beast
+    you encounter. Make this quick.""")
+    message25.draw(win)
+
+    battle(win,win2,win4,win5,win6,hero)
+    
+    message7 = Text(Point(350,270),"After your daily sweep, you enter a bar to monitor\n"
     "the environment")
     message7.draw(win)
-    message8 = Text(Point(350,290),"You see two men having a discussion. You approach the bartender and buy\n"
+    message8 = Text(Point(350,350),"You see two men having a discussion. You approach the bartender and buy\n"
     "a drink to not seem suspiscious. From your current distance you can overhear their\n"
     "conversation. To your surprise, they are belittling the Knight Order\n"
     "and the Kingdom who you have sworn to protect. This frustrates you thus, \n"

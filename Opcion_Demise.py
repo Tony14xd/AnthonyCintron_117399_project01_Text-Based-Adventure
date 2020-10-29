@@ -17,7 +17,8 @@ def option_demise(win,win2,win3):
         message16.draw(win3)
     elif choice in AnswerC:
         message17 = Text(Point(360,420),"You have no way to survive the outside. You are hungry. You eat an venomous apple and slowly die."
-        "\n\nYTerrible way to do")
+        "\n\nTerrible way to do")
         message17.draw(win3)
+        win3.getMouse()
     else:
         print (must)

@@ -3,7 +3,7 @@ from User_Input import *
 from User_choices import *
 from Opcion_mala import *
 def option_ask(win,win2):
-    message6 = Text(Point(350,460),"The two men look at one another. They begin laughing and this confuses you\n"
+    message6 = Text(Point(350,505),"The two men look at one another. They begin laughing and this confuses you\n"
     "They ask you for how long have you been in the Knight Order. You kindly reply with the truth\n"
     "Just 2 days. The man on the left says: Rookie Numbers. No wonder he has no idea, and\n"
     "thinks everything is all ice cream and gumdrops. The man of the right coughs with a slight\n"

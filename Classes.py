@@ -1,7 +1,7 @@
 from graphics import *
 
 class Human:
-    def __init__(self,name = "Human", health = 200, s = 70, defense = 50, magic = 20):
+    def __init__(self,name = "Human", health = 100, s = 70, defense = 50, magic = 20):
         self.name = name
         self.health = health
         self.strength = s
@@ -16,7 +16,7 @@ class Human:
 
 
 class Dragoon:
-    def __init__(self,name = "Dragoon", health = 100, strength = 70, defense = 20, magic = 70):
+    def __init__(self,name = "Dragoon", health = 100, strength = 70, defense = 60, magic = 70):
         self.name = name
         self.health = health
         self.strength = strength
@@ -27,7 +27,7 @@ class Dragoon:
         return self.strength
 
 class Orc:
-    def __init__(self,name= "Human", health = 150, strength = 100, defense = 20, magic = 0):
+    def __init__(self,name= "Human", health = 20, strength = 80, defense = 20, magic = 0):
         self.name = name
         self.health = health
         self.strength = strength
@@ -42,7 +42,7 @@ class Orc:
 
 
 class Elf:
-    def __init__(self,name = "Elf", health = 120, strength = 50, defense = 60, magic = 60):
+    def __init__(self,name = "Elf", health = 100, strength = 50, defense = 60, magic = 60):
         self.name = name
         self.health = health
         self.strength = strength

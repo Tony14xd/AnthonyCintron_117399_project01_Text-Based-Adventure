@@ -1,4 +1,6 @@
 from graphics import *
+
+#User Input Box, solely for inputs and nothing else
 def userinput(message,win2):
     message1 = Text(Point(300,100), message)
     message1.draw(win2)
